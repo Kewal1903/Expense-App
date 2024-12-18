@@ -79,6 +79,8 @@ body {
     padding: 20px;
     margin: 20px;
     box-shadow: 0 4px 6px var(--shadow-color);
+    font-weight: bold;
+    font-size: 20px;
 }
 
 #expense-input h3{
@@ -108,26 +110,37 @@ body {
     background: var(--button-bg-hover);
 }
 
-#expense-input p[class = "category-input"]{
+#expense-input p.category-input {
+    padding-top: 5px;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap : 10px;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    gap: 40px; 
+    justify-content: flex-start; 
+    align-items: center; 
 }
 
-#expense-input input[type="radio"]{
-    margin-right: 5px;
-}
-
-#expense-input label{
+#expense-input label {
     display: flex;
-    align-items: center;
-    margin-right: 15px;
+    align-items: center; 
+    gap: 10px; 
+    font-size: 20px; 
+    color: var(--text-primary);
+    cursor: pointer;
+    white-space: nowrap;
 }
 
-#expense-input label i{
-    margin-right: 5px;
+#expense-input input[type="radio"] {
+    margin: 0; 
+    accent-color: var(--button-bg-primary); 
+    cursor: pointer;
 }
+
+#expense-input label i {
+    font-size: 16px; 
+    color: var(--button-bg-primary); 
+}
+
 
 #expense-list, #charts, #summary {
     background-color: var(--bg-secondary);
@@ -143,6 +156,8 @@ body {
 
 #charts canvas{
     margin: auto;
+    max-width: 80%;
+    max-height: 80%;
 }
 
 table {
