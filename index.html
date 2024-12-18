@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker App</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="name"><h1>Personal Finance Tracker</h1></div>
+        <div class="navbar">
+            <h3><a href="#expense-input"><i class="fas fa-plus-circle"></i> Add Expense</a></h3>
+            <h3><a href="#expense-list"><i class="fas fa-list"></i> Expense List</a></h3>
+            <h3><a href="#charts"><i class="fas fa-chart-pie"></i> Statistics</a></h3>
+            <h3>
+                <a href="#" id = "theme-toggle">
+                    <i class = "fas fa-moon"></i> Dark Mode
+                </a>
+            </h3>
+        </div>
+    </header>
+    
+    <div id="expense-input">
+        <h3><i class="fas fa-plus-circle"></i> Add Expense :</h3>
+        <div>
+            <p><i class="fa-solid fa-indian-rupee-sign"></i> Enter Amount : <input type="number" label="amount"></p>
+            <p class = "category-input"><i class="fas fa-tags"></i> 
+                <span>Select Category: </span>
+                <input type="radio" name="category" id="food" value="Food"><label for="food"><i class="fas fa-utensils"></i> Food</label>
+                <input type="radio" name="category" id="transport" value="Transport"><label for="transport"><i class="fas fa-bus"></i> Transport</label>
+                <input type="radio" name="category" id="items" value="Household Items"><label for="items"><i class="fas fa-home"></i> Household Items</label>
+                <input type="radio" name="category" id="others" value="Miscellaneous Expenses"><label for="others"><i class="fas fa-ellipsis-h"></i> Miscellaneous Expenses</label>
+            </p>
+            <br>
+            <p><i class="fas fa-comment"></i> Enter Description : <input type="text" id="description"></p>
+            <p><i class="fas fa-calendar-alt"></i> Enter Date : <input type="date" id="exp-date" required></p>
+            <input type="button" id="add-exp" value="Add Expense">
+            <input type="button" id="clear-form" value="Clear Form">
+        </div>
+    </div>
+
+    <div id="expense-list">
+        <h3><i class="fas fa-list"></i> List of Expenses : </h3>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="charts">
+        <h3><i class="fas fa-chart-pie"></i> Expense Overview : </h3>
+        <canvas id="expenseChart" width="30" height="15"></canvas>
+    </div>
+
+    <div id="summary">
+        <h3><i class="fas fa-file-invoice-dollar"></i> Expense Summary : </h3>
+        <br>
+        <p><i class="fa-solid fa-indian-rupee-sign"></i> Total Expenses : <span id="total-expenses">Rs. 0.00</span></p>
+        <p><i class="fas fa-chart-bar"></i> Most Common Category : <span id="common-category">None</span></p>
+        <p><i class="fas fa-arrow-up"></i> Highest Expense : <span id="highest-expense">Rs. 0.00</span></p>
+    </div>
+
+    <footer>
+        &copy Made by Kewal Thacker
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
