@@ -89,6 +89,7 @@ function renderExpenses() {
         `;
         expenseTableBody.appendChild(row);
     });
+    renderChart();
 }
 
 function editExpense(index) {
